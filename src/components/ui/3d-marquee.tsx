@@ -2,19 +2,27 @@
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-export const ThreeDMarquee = ({
-  images,
+
+type Post = {
+  title: string;
+  description: string;
+  image: string;
+  date: string;
+};
+
+export default function ThreeDMarquee({
+  posts,
   className,
 }: {
-  images: string[];
+  posts: Post[];
   className?: string;
-}) => {
-  // Split the images array into 4 equal parts
-  const chunkSize = Math.ceil(images.length / 4);
+}) {
+  const chunkSize = Math.ceil(posts.length / 4);
   const chunks = Array.from({ length: 4 }, (_, colIndex) => {
     const start = colIndex * chunkSize;
-    return images.slice(start, start + chunkSize);
+    return posts.slice(start, start + chunkSize);
   });
+
   return (
     <div
       className={cn(
@@ -42,8 +50,8 @@ export const ThreeDMarquee = ({
                 className="flex flex-col items-start gap-8"
               >
                 <GridLineVertical className="-left-4" offset="80px" />
-                {subarray.map((image, imageIndex) => (
-                  <div className="relative" key={imageIndex + image}>
+                {subarray.map((post, imageIndex) => (
+                  <div className="relative" key={imageIndex + post.image}>
                     <GridLineHorizontal className="-top-4" offset="20px" />
                     <motion.img
                       whileHover={{
@@ -53,13 +61,22 @@ export const ThreeDMarquee = ({
                         duration: 0.3,
                         ease: "easeInOut",
                       }}
-                      key={imageIndex + image}
-                      src={image}
+                      key={imageIndex + post.image}
+                      src={post.image}
                       alt={`Image ${imageIndex + 1}`}
                       className="aspect-[970/700] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
                       width={970}
                       height={700}
                     />
+                    <div className="flex items-center justify-between py-2">
+                      <p className="text-2xl">{post.title}</p>
+                      <p className="text-accent-foreground/30 font-extralight">
+                        {post.date}
+                      </p>
+                    </div>
+                    <p className="text-accent-foreground/60 text-1xl font-extralight">
+                      {post.description}
+                    </p>
                   </div>
                 ))}
               </motion.div>
@@ -69,7 +86,7 @@ export const ThreeDMarquee = ({
       </div>
     </div>
   );
-};
+}
 
 const GridLineHorizontal = ({
   className,

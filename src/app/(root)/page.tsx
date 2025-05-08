@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Test from "@/components/ui/test";
+import ThreeDMarquee from "@/components/ui/3d-marquee";
 
 export default function Home() {
   const posts = [
@@ -218,10 +218,10 @@ export default function Home() {
             {/* Button */}
             <Button className="w-fit">Liên hệ với tôi</Button>
           </div>
-          {/* Box grid */}
+          {/* Post marquee */}
           <div className="lg:w-1/2 w-full relative">
             <div className="absolute z-0 w-full h-[100px]"></div>
-            <Test posts={posts} />
+            <ThreeDMarquee posts={posts} />
           </div>
         </div>
       </div>
