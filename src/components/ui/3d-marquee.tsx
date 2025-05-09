@@ -26,7 +26,7 @@ export default function ThreeDMarquee({
   return (
     <div
       className={cn(
-        "mx-auto block h-[600px] overflow-hidden rounded-2xl max-sm:h-100",
+        "mx-auto block h-[700px] overflow-hidden rounded-2xl max-sm:h-100",
         className
       )}
     >
@@ -40,7 +40,7 @@ export default function ThreeDMarquee({
           >
             {chunks.map((subarray, colIndex) => (
               <motion.div
-                animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
+                animate={{ y: colIndex % 2 === 0 ? 500 : -500 }}
                 transition={{
                   duration: colIndex % 2 === 0 ? 10 : 15,
                   repeat: Infinity,

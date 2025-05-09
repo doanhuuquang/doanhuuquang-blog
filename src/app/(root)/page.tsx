@@ -202,25 +202,28 @@ export default function Home() {
     <div className="w-full">
       <div className="max-w-[1400px] lg:p-8 p-3 m-auto xl:border-l-1 xl:border-r-1 border-dashed">
         {/* Banner */}
-        <div className="lg:pt-0 pt-7 flex lg:flex-row flex-col items-center justify-between gap-10">
-          {/* Banner text */}
-          <div className="flex flex-col gap-10 lg:items-start lg:text-start text-center items-center lg:w-1/2 w-full">
-            {/* Title */}
-            <p className="lg:text-7xl text-4xl font-bold">
-              Giải pháp <span className="text-primary">IT</span> cho ý tưởng của
-              bạn
-            </p>
-            {/* Subtitle */}
-            <p>
-              Bạn có ý tưởng muốn phát triển? Vinhweb giúp bạn xây dựng ý tưởng
-              của bạn với lập trình Web, App.
-            </p>
-            {/* Button */}
-            <Button className="w-fit">Liên hệ với tôi</Button>
-          </div>
-          {/* Post marquee */}
-          <div className="lg:w-1/2 w-full relative">
-            <div className="absolute z-0 w-full h-[100px]"></div>
+        <div className="lg:pt-0 pt-7">
+          <div className="relative">
+            {/* Banner text */}
+            <div className="lg:absolute lg:mb-0 mb-20 z-10 h-full top-0 left-0 flex flex-col gap-10 lg:items-start lg:text-start text-center items-center justify-center lg:w-11/12 w-full bg-linear-to-r from-background to-transparent">
+              {/* Title */}
+              <p className="lg:text-7xl lg:w-3/6 text-4xl font-extrabold leading-tight">
+                Giải pháp <span className="text-primary">IT</span> cho ý tưởng
+                của bạn
+              </p>
+              {/* Subtitle */}
+              <p className="mt-4 text-lg lg:w-3/6 text-muted-foreground">
+                Tôi là Quang — lập trình viên đam mê xây dựng các giải pháp Web
+                & App tùy chỉnh. Nếu bạn có một ý tưởng đang ấp ủ, tôi sẽ giúp
+                bạn hiện thực hóa nó bằng công nghệ phù hợp, hiệu quả và bền
+                vững.
+              </p>
+              {/* Button */}
+              <Button className="mt-6 w-fit text-base px-6 py-3">
+                Liên hệ để cùng bắt đầu
+              </Button>
+            </div>
+            {/* Post marquee */}
             <ThreeDMarquee posts={posts} />
           </div>
         </div>
