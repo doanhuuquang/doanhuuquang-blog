@@ -130,7 +130,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="flex lg:flex-row gap-10 flex-col w-full items-center justify-between bg-gradient-to-r from-blue-800 to-blue-500 shadow-blue-400 rounded-2xl lg:p-5 px-3 py-6">
+    <div className="flex lg:flex-row gap-10 flex-col w-full items-center justify-between bg-gradient-to-br from-blue-800 to-blue-500 shadow-blue-400 rounded-2xl lg:p-5 px-3 py-6">
       <div className="flex flex-col gap-15 justify-between w-full text-white">
         <div className="flex flex-col gap-5">
           {/* Title */}
