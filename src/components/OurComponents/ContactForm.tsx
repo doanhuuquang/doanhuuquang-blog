@@ -137,7 +137,7 @@ export default function ContactForm() {
           <p className="text-4xl font-bold">Yêu cầu báo giá</p>
           {/* Subtitle */}
           <p>
-            Liên hệ ngay với Vinh Web để nhận được tư vấn miễn phí, tư vấn giải
+            Liên hệ ngay với chúng tôi để nhận được tư vấn miễn phí, tư vấn giải
             pháp công nghệ cho bạn.
           </p>
         </div>
