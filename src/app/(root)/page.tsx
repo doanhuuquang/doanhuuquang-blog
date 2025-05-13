@@ -1,5 +1,19 @@
+import { CodeXml, TvMinimalPlay, Rss } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThreeDMarquee from "@/components/ui/3d-marquee";
+import ProductCard from "@/components/OurComponents/ProductCard";
+import VideoCard from "@/components/OurComponents/VideoCard";
+import ContactForm from "@/components/OurComponents/ContactForm";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import products from "@/data/products";
+import videos from "@/data/videos";
 
 export default function Home() {
   const posts = [
@@ -200,21 +214,21 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <div className="max-w-[1400px] lg:p-8 p-3 m-auto xl:border-l-1 xl:border-r-1 border-dashed">
+      <div className="max-w-[1400px] m-auto xl:border-l-1 xl:border-r-1 border-dashed">
         {/* Banner */}
         <div className="lg:pt-0 pt-7">
-          <div className="relative">
+          <div className="relative min-h-dvh">
             {/* Banner text */}
-            <div className="lg:absolute lg:mb-0 mb-20 z-10 h-full top-0 left-0 flex flex-col gap-10 lg:items-start lg:text-start text-center items-center justify-center lg:w-11/12 w-full bg-linear-to-r from-background to-transparent">
+            <div className="lg:absolute lg:p-8 p-3 lg:mb-0 mb-20 z-10 h-full top-0 left-0 flex flex-col gap-10 lg:items-start lg:text-start text-center items-center justify-center w-full bg-linear-to-r from-background to-transparent">
               {/* Title */}
-              <p className="lg:text-7xl lg:w-3/6 text-4xl font-extrabold leading-tight">
+              <p className="lg:text-7xl lg:w-3/7 text-4xl font-extrabold leading-tight">
                 Giải pháp <span className="text-primary">IT</span> cho ý tưởng
                 của bạn
               </p>
               {/* Subtitle */}
-              <p className="mt-4 text-lg lg:w-3/6 text-muted-foreground">
-                Tôi là Quang — lập trình viên đam mê xây dựng các giải pháp Web
-                & App tùy chỉnh. Nếu bạn có một ý tưởng đang ấp ủ, tôi sẽ giúp
+              <p className="mt-4 text-lg lg:w-3/7 text-muted-foreground">
+                Mình là Quang — lập trình viên đam mê xây dựng các giải pháp Web
+                & App tùy chỉnh. Nếu bạn có một ý tưởng đang ấp ủ, mình sẽ giúp
                 bạn hiện thực hóa nó bằng công nghệ phù hợp, hiệu quả và bền
                 vững.
               </p>
@@ -224,8 +238,108 @@ export default function Home() {
               </Button>
             </div>
             {/* Post marquee */}
-            <ThreeDMarquee posts={posts} />
+            <ThreeDMarquee posts={posts} className="min-h-dvh" />
           </div>
+        </div>
+
+        {/* Source code */}
+        <div className="mb-20">
+          {/* Title */}
+          <div className="flex items-center py-5 justify-center gap-3 border-t-1 border-b-1 border-dashed">
+            <CodeXml className="size-10" />
+            <p className="uppercase text-3xl font-bold">SOURCE CODE</p>
+          </div>
+
+          {/* Sub title */}
+          <p className="p-3 text-center text-muted-foreground">
+            Mã nguồn đã được xây dựng sẵn với đầy đủ tính năng, dễ dàng mở rộng
+            và phù hợp cho cả cá nhân lẫn đội ngũ phát triển.
+          </p>
+
+          {/* Grid card */}
+          <div className="lg:p-8 p-3 grid grid-cols-4 gap-5">
+            {products.map((product, index) => (
+              <ProductCard key={index} product={product} />
+            ))}
+          </div>
+
+          {/* Watch more product button */}
+          <div className="w-full flex justify-center">
+            <Button variant={"link"} className="mx-auto text-accent-foreground">
+              Khám phá thêm
+            </Button>
+          </div>
+        </div>
+
+        {/* Videos */}
+        <div className="mb-20">
+          {/* Title */}
+          <div className="flex items-center py-5 justify-center gap-3 border-t-1 border-b-1 border-dashed">
+            <TvMinimalPlay className="size-10" />
+            <p className="uppercase text-3xl font-bold">VIDEOS</p>
+          </div>
+
+          {/* Sub title */}
+          <p className="p-3 text-center text-muted-foreground">
+            Chia sẻ kinh nghiệm lập trình và cuộc sống thường nhật của một lập
+            trình viên qua những video chân thực.
+          </p>
+
+          {/* Grid card */}
+          <div className="lg:p-8 p-3 grid grid-cols-4 gap-5">
+            {videos.map((videos, index) => (
+              <VideoCard key={index} video={videos} />
+            ))}
+          </div>
+
+          {/* Watch more product button */}
+          <div className="w-full flex justify-center">
+            <Button variant={"link"} className="mx-auto text-accent-foreground">
+              Khám phá thêm
+            </Button>
+          </div>
+        </div>
+
+        {/* Blog */}
+        <div className="mb-20">
+          {/* Title */}
+          <div className="flex items-center py-5 justify-center gap-3 border-t-1 border-b-1 border-dashed">
+            <Rss className="size-10" />
+            <p className="uppercase text-3xl font-bold">BLOG</p>
+          </div>
+
+          {/* Sub title */}
+          <p className="p-3 text-center text-muted-foreground">
+            Khám phá những bài viết chia sẻ kiến thức, kinh nghiệm và góc nhìn
+            cá nhân trên blog của mình.
+          </p>
+
+          {/* Carousel card */}
+          <div className="lg:p-8 p-3">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {videos.map((videos, index) => (
+                  <CarouselItem key={index}>
+                    <VideoCard key={index} video={videos} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          {/* Watch more product button */}
+          <div className="w-full flex justify-center">
+            <Button variant={"link"} className="mx-auto text-accent-foreground">
+              Khám phá thêm
+            </Button>
+          </div>
+        </div>
+
+        {/* Báo giá */}
+        <div className="mb-20 lg:p-8 p-3">
+          <ContactForm />
         </div>
       </div>
     </div>

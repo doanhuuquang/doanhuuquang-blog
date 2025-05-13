@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className="w-full border-b-1 border-dashed backdrop-blur-sm bg-background/90 sticky z-50 top-0 left-0">
-      <div className="lg:px-8 px-3 h-14 flex items-center justify-between gap-2 md:gap-4 m-auto max-w-[1400px] xl:border-l-1 xl:border-r-1 border-dashed">
+      <div className="lg:px-8 px-3 h-17 flex items-center justify-between gap-2 md:gap-4 m-auto max-w-[1400px] xl:border-l-1 xl:border-r-1 border-dashed">
         <div className="flex items-center gap-10">
           {/* Hamburger menu toggle*/}
           <div className="lg:hidden w-[24px] h-[24px]">
@@ -29,7 +29,9 @@ export default function Header() {
           </div>
 
           {/* Logo */}
-          <Link href={"/"}>Logo</Link>
+          <Link href={"/"}>
+            <h3 className="font-bold text-2xl">quangdh</h3>
+          </Link>
 
           {/* Menu */}
           <NavigationMenu className="hidden lg:flex">
