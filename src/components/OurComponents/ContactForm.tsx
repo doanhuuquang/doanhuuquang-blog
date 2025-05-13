@@ -219,7 +219,7 @@ export default function ContactForm() {
                 </FormItem>
               )}
             />
-            <div className="flex lg:flex-row flex-col gap-3 w-full">
+            <div className="flex lg:flex-row flex-col gap-8 w-full">
               <div className="w-full">
                 <FormField
                   control={form.control}
