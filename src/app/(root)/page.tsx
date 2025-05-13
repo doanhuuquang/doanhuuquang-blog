@@ -233,7 +233,7 @@ export default function Home() {
                 vững.
               </p>
               {/* Button */}
-              <Button className="mt-6 w-fit text-base px-6 py-3">
+              <Button className="mt-6 w-fit text-base px-10 py-5">
                 Liên hệ để cùng bắt đầu
               </Button>
             </div>
