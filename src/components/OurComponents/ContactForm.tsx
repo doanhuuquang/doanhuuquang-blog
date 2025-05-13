@@ -73,7 +73,7 @@ export function ComboBoxBudget({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full p-5 justify-between bg-transparent border border-gray-300 hover:bg-transparent shadow-none"
+          className="w-full p-5 justify-between bg-transparent border border-gray-300 dark:border-gray-300 hover:bg-transparent shadow-none"
         >
           {field.value
             ? budgets.find((budget) => budget.value === field.value)?.label
