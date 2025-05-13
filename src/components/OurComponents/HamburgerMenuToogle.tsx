@@ -36,7 +36,7 @@ export default function HamburgerMenuToogle() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-300"
+              className="text-md mb-5 font-medium text-muted-foreground hover:text-primary transition-all duration-300"
             >
               {item.name}
             </Link>
